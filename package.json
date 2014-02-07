@@ -1,0 +1,33 @@
+{
+    "name" : "dogene",
+    "version" : "0.1.0",
+    "description" : "Lightweight source code documentation generator.",
+    "main" : "./dogene.js",
+    "dependencies" : {
+        "optimist" : "~0.6.0"
+    },
+    "bin": {
+        "dukka": "./dukka.js"
+    },
+    "devDependencies" : {
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "http://github.com/djupudga/dogene.git"
+    },
+    "keywords" : [
+        "documentation",
+        "generator",
+        "source",
+        "code",
+        "parsing",
+        "parse"
+    ],
+    "author" : {
+        "name" : "Helgi Kristjansson"
+    },
+    "license" : "MIT",
+    "engine" : {
+        "node" : ">=0.4"
+    }
+}
