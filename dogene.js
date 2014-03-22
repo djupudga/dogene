@@ -94,7 +94,7 @@ function walkTree(node, nodes) {
       nodes[i].children = nodes[i].children || []
       nodes[i].children.push(node)
       return true
-    } else if (node.of.indexOf(nodes[i].fqn) === 0) {
+    } else if (node.of && node.of.indexOf(nodes[i].fqn) === 0) {
       return walkTree(node, nodes[i].children)
     }
   }
