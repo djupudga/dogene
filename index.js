@@ -1,21 +1,18 @@
 #!/usr/bin/env node
 
-//#module dukka
+//#module dogene
 //-Parse arguments
 //-to the program.
 var argv = require('optimist')
   .usage('Usage: $0 -f <filename> -o <filename> -kp <kw prefix> -pp <param prefix> -dp <doc prefix>')
-  .demand('f')
-//  .demand(['f','o'])
   .alias('f', 'file')
-//  .alias('o', 'out')
-  .alias('kp', 'keyword-prefix')
-  .alias('dp', 'doc-prefix')
-  .default({kp: '#', dp: '-'})
+  .demand('f')
   .describe('f', 'Input file')
-//  .describe('o', 'Output file')
+  .alias('kp', 'keyword-prefix')
   .describe('kp', 'Keyword prefix')
+  .alias('dp', 'doc-prefix')
   .describe('dp', 'Text doc prefix')
+  .default({kp: '#', dp: '-'})
   .argv
 
 
@@ -38,7 +35,7 @@ var nodes = {
 var current,
     callable = ['function', 'method', 'constructor']
 
-//#function main of dukka
+//#function main of dogene
 //-Program entry point.
 function main() {
   fs.readFile(argv.f, function(err, data) {
@@ -60,10 +57,10 @@ function main() {
   })
 }
 
-//#function kalle of dukka.main
+//#function kalle of dogene.main
 //-Wonder how this will work.
 
-//#function attachToTree of dukka
+//#function attachToTree of dogene
 //#param Object node Type information to insert into doc tree
 //-Attaches type information to the documentation tree.
 function attachToTree(node) {
@@ -100,7 +97,7 @@ function walkTree(node, nodes) {
   }
 }
 
-//#function parseKeywords of dukka
+//#function parseKeywords of dogene
 //#param String line Line to parse.
 //-Parses a keyword definition line.
 function parseKeywords(line) {
@@ -124,7 +121,7 @@ function parseKeywords(line) {
   }
 }
 
-//#function parseParam of dukka
+//#function parseParam of dogene
 //#param String line Line to parse.
 //-Parses a parameter definition line.
 function parseParam(line) {
@@ -143,7 +140,7 @@ function parseParam(line) {
   }
 }
 
-//#function parseDoc of dukka
+//#function parseDoc of dogene
 //#param String line Line to parse
 function parseDoc(line) {
   var doc = line.substring(line.indexOf(argv.dp)+argv.dp.length)

@@ -2,12 +2,12 @@
     "name" : "dogene",
     "version" : "0.1.0",
     "description" : "Lightweight source code documentation generator.",
-    "main" : "./dogene.js",
+    "main" : "./index.js",
     "dependencies" : {
         "optimist" : "~0.6.0"
     },
     "bin": {
-        "dukka": "./dukka.js"
+        "dogene": "bin/dogene"
     },
     "devDependencies" : {
     },
